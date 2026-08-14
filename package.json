@@ -1,0 +1,72 @@
+{
+  "name": "@dev4press/field-text",
+  "version": "0.9.1",
+  "description": "Modular TypeScript library for working with input fields.",
+  "type": "module",
+  "main": "./dist/fieldtext.umd.cjs",
+  "module": "./dist/fieldtext.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/fieldtext.js",
+      "require": "./dist/fieldtext.umd.cjs"
+    },
+    "./fieldtext.css": "./dist/fieldtext.css"
+  },
+  "scripts": {
+    "check": "tsc --noEmit",
+    "lint:ts": "eslint \"src/**/*.ts\" \"test/**/*.ts\" \"vite.config.ts\"",
+    "lint:scss": "stylelint \"src/**/*.scss\"",
+    "lint": "npm run lint:ts && npm run lint:scss",
+    "format": "prettier --write \"src/**/*.{ts,scss}\" \"test/**/*.ts\" \"vite.config.ts\"",
+    "format:check": "prettier --check \"src/**/*.{ts,scss}\" \"test/**/*.ts\" \"vite.config.ts\"",
+    "build": "npm run check && vite build && tsc -p tsconfig.lib.json",
+    "predev": "npm run build",
+    "dev": "vite"
+  },
+  "files": [
+    "dist",
+    "license.txt",
+    "readme.md",
+    "changelog.md",
+    "documentation"
+  ],
+  "engines": {
+    "node": ">=24.15.0"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dev4press/fieldtext.git"
+  },
+  "bugs": {
+    "url": "https://github.com/dev4press/fieldtext/issues"
+  },
+  "homepage": "https://www.dev4press.com/",
+  "keywords": [
+    "field",
+    "text",
+    "counter",
+    "typescript",
+    "sass"
+  ],
+  "author": "Milan Petrovic",
+  "devDependencies": {
+    "@types/jsdom": "^30.0.0",
+    "@types/node": "^24.0.0",
+    "@typescript-eslint/eslint-plugin": "^7.18.0",
+    "@typescript-eslint/parser": "^7.18.0",
+    "eslint": "^8.57.1",
+    "jsdom": "^30.0.1",
+    "prettier": "^3.9.6",
+    "sass": "^1.83.4",
+    "stylelint": "^16.26.1",
+    "stylelint-config-standard-scss": "^16.0.0",
+    "typescript": "^6.0.3",
+    "vite": "^8.2.1",
+    "vitest": "^4.1.11"
+  }
+}

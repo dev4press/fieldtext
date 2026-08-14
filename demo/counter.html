@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="FieldTextCounter demo" />
+    <title>FieldTextCounter demo | FieldText</title>
+    <link rel="stylesheet" href="/dist/field-text.css" />
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <main class="demo-shell">
+      <header class="demo-header">
+        <p class="eyebrow">FieldText / Counter</p>
+        <h1>A clearer way to count every character.</h1>
+        <p class="intro">
+          FieldTextCounter keeps writing limits visible and gives people immediate feedback as they type.
+        </p>
+      </header>
+
+      <section class="demo-card" aria-labelledby="demo-title">
+        <h2 id="demo-title">Try the counter</h2>
+
+        <div class="field-group">
+          <label for="message">Message</label>
+          <p class="field-hint">A short note with a 140-character limit.</p>
+          <textarea
+            id="message"
+            rows="5"
+            placeholder="Write something thoughtful..."
+            data-field-text-counter
+            data-field-text-counter-max-chars="140"
+            data-field-text-counter-max-percentage-warning="85"
+          ></textarea>
+        </div>
+
+        <div class="field-group">
+          <label for="subject">Subject</label>
+          <p class="field-hint">Keep the subject focused with a 60-character limit.</p>
+          <input
+            id="subject"
+            type="text"
+            maxlength="60"
+            placeholder="Add a concise subject"
+            data-field-text-counter
+            data-field-text-counter-max-percentage-warning="85"
+          />
+        </div>
+      </section>
+    </main>
+
+    <script type="module">
+      import { FieldTextCounter } from '/dist/field-text.js';
+
+      FieldTextCounter.autoLoad();
+    </script>
+  </body>
+</html>

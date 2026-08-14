@@ -1,0 +1,20 @@
+:root {
+  --field-text-counter-warning-color: #f00;
+  --field-text-counter-alignment: right;
+}
+
+.field-text-counter {
+  text-align: var(--field-text-counter-alignment);
+  transition: opacity 150ms ease-in-out;
+  box-sizing: border-box;
+  font-size: 12px;
+  opacity: 0;
+
+  &--visible {
+    opacity: 1;
+  }
+
+  &--warning {
+    color: var(--field-text-counter-warning-color);
+  }
+}
